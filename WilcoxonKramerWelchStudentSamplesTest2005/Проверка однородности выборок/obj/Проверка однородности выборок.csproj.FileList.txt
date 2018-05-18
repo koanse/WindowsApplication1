@@ -1,0 +1,13 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Проверка_однородности_выборок.Properties.Resources.resources
+obj\Debug\Проверка однородности выборок.csproj.GenerateResource.Cache
+bin\Debug\Проверка однородности выборок.exe
+bin\Debug\Проверка однородности выборок.pdb
+obj\Debug\Проверка однородности выборок.exe
+obj\Debug\Проверка однородности выборок.pdb
+obj\Debug\Проверка_однородности_выборок.Form1.resources
+obj\Debug\Проверка_однородности_выборок.Form2.resources
+obj\Debug\Проверка_однородности_выборок.Form3.resources
+obj\Debug\Проверка_однородности_выборок.Form4.resources
+obj\Debug\Проверка_однородности_выборок.Form5.resources
+obj\Debug\Проверка_однородности_выборок.Form6.resources

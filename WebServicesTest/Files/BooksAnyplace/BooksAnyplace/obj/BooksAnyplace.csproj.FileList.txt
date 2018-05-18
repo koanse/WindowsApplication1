@@ -1,0 +1,5 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\BooksAnyplace.frmMain.resources
+obj\Debug\BooksAnyplace.csproj.GenerateResource.Cache
+obj\Debug\BooksAnyplace.exe
+obj\Debug\BooksAnyplace.pdb

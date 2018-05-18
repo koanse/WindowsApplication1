@@ -1,0 +1,217 @@
+<VisualStudioProject>
+    <ECSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.2215"
+        SchemaVersion = "1.0"
+        ProjectGuid = "{E8BC5578-E97D-4AC0-8408-4DCE686BD640}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "People Anyplace"
+                AssemblyOriginatorKeyFile = ""
+                DelaySign = "false"
+                OutputType = "WinExe"
+                OutputFileFolder = "\Windows"
+                RootNamespace = "People_Anyplace"
+                StartupObject = ""
+            >
+                <Platform Name = "Pocket PC" />
+                <Config
+                    Name = "Debug|Pocket PC"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "0"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release|Pocket PC"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "0"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "MSCorLib"
+                    AssemblyName = "mscorlib"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System"
+                    AssemblyName = "System"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "Microsoft.CF.WindowsCE.Forms"
+                    AssemblyName = "Microsoft.CF.WindowsCE.Forms"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System.CF.Design"
+                    AssemblyName = "System.CF.Design"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System.CF.Windows.Forms"
+                    AssemblyName = "System.CF.Windows.Forms"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System.CF.Drawing"
+                    AssemblyName = "System.CF.Drawing"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System"
+                    AssemblyName = "System"
+                    Private = "False"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CheckConnection.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Main.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Main.resx"
+                    DependentUpon = "Main.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "YellowPages.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "YellowPages.resx"
+                    DependentUpon = "YellowPages.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Web References\net.serviceobjects.ws\GeoPhone.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\net.serviceobjects.ws\Reference.map"
+                    BuildAction = "None"
+                    Generator = "MSDiscoCodeGenerator"
+                    LastGenOutput = "Reference.cs"
+                />
+                <File
+                    RelPath = "Web References\net.serviceobjects.ws\Reference.cs"
+                    DependentUpon = "Reference.map"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <Folder
+                    RelPath = "Web References\net.serviceobjects.ws\"
+                    WebReferenceUrl = "http://ws.serviceobjects.net/gp/GeoPhone.asmx?WSDL"
+                    UrlBehavior = "Static"
+                />
+                <File
+                    RelPath = "Web References\net.serviceobjects.ws2\Reference.map"
+                    BuildAction = "None"
+                    Generator = "MSDiscoCodeGenerator"
+                    LastGenOutput = "Reference.cs"
+                />
+                <File
+                    RelPath = "Web References\net.serviceobjects.ws2\Reference.cs"
+                    DependentUpon = "Reference.map"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Web References\net.serviceobjects.ws2\YellowPages.wsdl"
+                    BuildAction = "None"
+                />
+                <Folder
+                    RelPath = "Web References\net.serviceobjects.ws2\"
+                    WebReferenceUrl = "http://ws2.serviceobjects.net/yp/YellowPages.asmx?WSDL"
+                    UrlBehavior = "Static"
+                />
+                <Folder
+                    RelPath = "Web References\"
+                    WebReferences = "TRUE"
+                />
+            </Include>
+        </Files>
+    </ECSHARP>
+</VisualStudioProject>
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s1="http://www.themindelectric.com/package/com.esri.is.services.common.v1.geom/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.themindelectric.com/package/com.esri.is.services.common/" xmlns:soap12enc="http://www.w3.org/2002/06/soap-envelope" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s2="http://www.themindelectric.com/package/com.esri.is.services.glue.v1.placefinder/" xmlns:tns="http://arcweb.esri.com/PlaceFinderSample" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://arcweb.esri.com/PlaceFinderSample" name="PlaceFinderSample" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.themindelectric.com/package/com.esri.is.services.common/">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://www.themindelectric.com/package/com.esri.is.services.common.v1.geom/" />
+      <xsd:complexType name="LocationInfo">
+        <xsd:sequence>
+          <xsd:element name="matchType" nillable="true" type="xsd:string" />
+          <xsd:element name="candidates" nillable="true" type="s0:ArrayOfLocation" />
+          <xsd:element name="hasMore" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Location">
+        <xsd:sequence>
+          <xsd:element name="x" type="xsd:double" />
+          <xsd:element name="y" type="xsd:double" />
+          <xsd:element name="description1" nillable="true" type="xsd:string" />
+          <xsd:element name="description2" nillable="true" type="xsd:string" />
+          <xsd:element name="score" type="xsd:double" />
+          <xsd:element name="matchType" nillable="true" type="xsd:string" />
+          <xsd:element name="type" nillable="true" type="xsd:string" />
+          <xsd:element name="locationExtent" nillable="true" type="s1:Envelope" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfLocation">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute d7p1:arrayType="s0:Location[]" ref="soapenc:arrayType" xmlns:d7p1="http://schemas.xmlsoap.org/wsdl/" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </s:schema>
+    <s:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.themindelectric.com/package/com.esri.is.services.common.v1.geom/">
+      <xsd:complexType name="Envelope">
+        <xsd:sequence>
+          <xsd:element name="minx" type="xsd:double" />
+          <xsd:element name="miny" type="xsd:double" />
+          <xsd:element name="maxx" type="xsd:double" />
+          <xsd:element name="maxy" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </s:schema>
+    <s:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.themindelectric.com/package/com.esri.is.services.glue.v1.placefinder/">
+      <xsd:import namespace="http://www.themindelectric.com/package/com.esri.is.services.common.v1.geom/" />
+      <xsd:complexType name="PlaceFinderOptions">
+        <xsd:sequence>
+          <xsd:element name="dataSource" nillable="true" type="xsd:string" />
+          <xsd:element name="filterType" nillable="true" type="xsd:string" />
+          <xsd:element name="filterEnvelope" nillable="true" type="s1:Envelope" />
+          <xsd:element name="startIndex" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </s:schema>
+  </types>
+  <message name="getVersion0In" />
+  <message name="getVersion0Out">
+    <part name="Result" type="s:string" />
+  </message>
+  <message name="findPlace1In">
+    <part name="placeName" type="s:string" />
+  </message>
+  <message name="findPlace1Out">
+    <part name="Result" type="s0:LocationInfo" />
+  </message>
+  <message name="findPlace2In">
+    <part name="placeName" type="s:string" />
+    <part name="placeFinderOptions" type="s2:PlaceFinderOptions" />
+  </message>
+  <message name="findPlace2Out">
+    <part name="Result" type="s0:LocationInfo" />
+  </message>
+  <portType name="IPlaceFinderSample">
+    <operation name="getVersion">
+      <documentation>Return the version of this service.</documentation>
+      <input name="getVersion0In" message="tns:getVersion0In" />
+      <output name="getVersion0Out" message="tns:getVersion0Out" />
+    </operation>
+    <operation name="findPlace" parameterOrder="placeName">
+      <documentation>Finds the location of all places that begin with the search string. </documentation>
+      <input name="findPlace1In" message="tns:findPlace1In" />
+      <output name="findPlace1Out" message="tns:findPlace1Out" />
+    </operation>
+    <operation name="findPlace" parameterOrder="placeName placeFinderOptions">
+      <documentation>Finds the location of all places that begin with the search string and are within the parameters specified. </documentation>
+      <input name="findPlace2In" message="tns:findPlace2In" />
+      <output name="findPlace2Out" message="tns:findPlace2Out" />
+    </operation>
+  </portType>
+  <binding name="IPlaceFinderSample" type="tns:IPlaceFinderSample">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="getVersion">
+      <soap:operation soapAction="getVersion" style="rpc" />
+      <input name="getVersion0In">
+        <soap:body use="encoded" namespace="http://arcweb.esri.com/PlaceFinderSample" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output name="getVersion0Out">
+        <soap:body use="encoded" namespace="http://arcweb.esri.com/PlaceFinderSample" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="findPlace">
+      <soap:operation soapAction="findPlace" style="rpc" />
+      <input name="findPlace1In">
+        <soap:body use="encoded" namespace="http://arcweb.esri.com/PlaceFinderSample" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output name="findPlace1Out">
+        <soap:body use="encoded" namespace="http://arcweb.esri.com/PlaceFinderSample" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="findPlace">
+      <soap:operation soapAction="findPlace" style="rpc" />
+      <input name="findPlace2In">
+        <soap:body use="encoded" namespace="http://arcweb.esri.com/PlaceFinderSample" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output name="findPlace2Out">
+        <soap:body use="encoded" namespace="http://arcweb.esri.com/PlaceFinderSample" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PlaceFinderSample">
+    <documentation>The Place Finder Sample Web Service is a free sample of the Place Finder Web Service. It enables users to input a place name and receive a ranked candidate list of place names and associated coordinates. This sample demonstrates the "find a place" functionality available in Place Finder Web Service. Usage: The Place Finder Sample Web Service may be used freely in low-volume, non-commercial Internet applications. Users may not re-sell this service as is or as part of a custom application. A subscription to ArcWeb Services, http://arcweb.esri.com, is required for high-volume (i.e., over 5,000 requests a day) or commercial use.</documentation>
+    <port name="IPlaceFinderSample" binding="tns:IPlaceFinderSample">
+      <soap:address location="http://arcweb.esri.com:80/services/v1/PlaceFinderSample" />
+    </port>
+  </service>
+</definitions>

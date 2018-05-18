@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.xmethods.net/sd/BNQuoteService.wsdl" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.xmethods.net/sd/BNQuoteService.wsdl" name="BNQuoteService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="getPriceRequest">
+    <part name="isbn" type="s:string" />
+  </message>
+  <message name="getPriceResponse">
+    <part name="return" type="s:float" />
+  </message>
+  <portType name="BNQuotePortType">
+    <operation name="getPrice">
+      <input name="getPrice" message="tns:getPriceRequest" />
+      <output name="getPriceResponse" message="tns:getPriceResponse" />
+    </operation>
+  </portType>
+  <binding name="BNQuoteBinding" type="tns:BNQuotePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="getPrice">
+      <soap:operation soapAction="" />
+      <input name="getPrice">
+        <soap:body use="encoded" namespace="urn:xmethods-BNPriceCheck" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output name="getPriceResponse">
+        <soap:body use="encoded" namespace="urn:xmethods-BNPriceCheck" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BNQuoteService">
+    <documentation>Returns price of a book at BN.com given an ISBN number</documentation>
+    <port name="BNQuotePort" binding="tns:BNQuoteBinding">
+      <soap:address location="http://services.xmethods.net:80/soap/servlet/rpcrouter" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "BooksAnyplace", "BooksAnyplace\BooksAnyplace.CSDPROJ", "{B023B716-8935-4B31-AB70-5B594B9768EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B023B716-8935-4B31-AB70-5B594B9768EB}.Debug.ActiveCfg = Debug|Pocket PC
+		{B023B716-8935-4B31-AB70-5B594B9768EB}.Debug.Build.0 = Debug|Pocket PC
+		{B023B716-8935-4B31-AB70-5B594B9768EB}.Debug.Deploy.0 = Debug|Pocket PC
+		{B023B716-8935-4B31-AB70-5B594B9768EB}.Release.ActiveCfg = Release|Pocket PC
+		{B023B716-8935-4B31-AB70-5B594B9768EB}.Release.Build.0 = Release|Pocket PC
+		{B023B716-8935-4B31-AB70-5B594B9768EB}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
